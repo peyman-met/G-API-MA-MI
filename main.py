@@ -53,8 +53,8 @@ if st.button('Start'):
 
         async def main():
             resultList = []
-            session_timeout = aiohttp.ClientTimeout(total=600)
-            async with aiohttp.ClientSession(timeout=session_timeout, trust_env=True) as session:
+            session_timeout =  aiohttp.ClientTimeout(total=600)
+            async with aiohttp.ClientSession(timeout=session_timeout,trust_env=True) as session:
                 tasks = []
                 for kw in keyword_list:
                     task = asyncio.ensure_future(get_data(session, kw))
